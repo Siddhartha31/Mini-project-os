@@ -1,0 +1,29 @@
+#include<conio.h>
+#include<stdio.h>
+int main()
+{
+RoundRobin();
+int flag[MAX],arrival_time[MAX],burst_time[MAX],priority[MAX];
+Response_Time[MAX],ft[MAX],fe[MAX],fe_flag[MAX],process_id[MAX],tms,qt[MAX];
+void RoundRobin()
+{
+      if(!q.empty())
+      {
+        if(Response_Time[q.front()]>0 && qt[q.front()]<4)
+        {
+                qt[q.front()]++;
+                Response_Time[q.front()]--;
+                if(Response_Time[q.front()]==0)
+                {
+                ft[q.front()]=tms+1;
+                q.pop();
+                }
+                if(Response_Time[q.front()]!=0 && qt[q.front()]==4)
+                {
+                qt[q.front()]=0;
+                q.push(q.front());
+                q.pop();
+                }
+            }
+      }
+}
